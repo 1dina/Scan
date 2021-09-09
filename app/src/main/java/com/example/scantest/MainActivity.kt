@@ -37,14 +37,8 @@ class MainActivity : AppCompatActivity() {
     }
     private val callback: MLBcrCapture.Callback = object : MLBcrCapture.Callback {
         override fun onSuccess(bankCardResult: MLBcrCaptureResult) {
-            Toast.makeText(this@MainActivity,"The id is ${bankCardResult}",Toast.LENGTH_SHORT).show()
-        if(bankCardResult.toString().length == 16) {
-            edit.setText(bankCardResult.toString())
-
-        }else{
-            Toast.makeText(this@MainActivity, "TRY AGAIN ", Toast.LENGTH_SHORT).show()
-
-            } }
+            edit.setText(bankCardResult.number)
+ }
 
         override fun onCanceled() {
 
